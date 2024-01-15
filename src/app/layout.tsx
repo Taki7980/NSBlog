@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Rubik } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
 import MaxWidthRapper from "@/components/reuseable/MaxWidthRapper";
+import { DarkThemeProvider } from "@/provider/DarkThemeProvider";
 
-const inter = Inter({ subsets: ["latin"] });
+const os = Rubik({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
 	title: "Create Next App",
@@ -19,12 +20,20 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<body className={inter.className}>
-				<MaxWidthRapper>
-					<Navbar />
-					{children}
-					<Footer />
-				</MaxWidthRapper>
+			<body className={os.className}>
+				<DarkThemeProvider
+					attribute="class"
+					defaultTheme="system"
+					enableSystem
+					disableTransitionOnChange
+				>
+					
+					<MaxWidthRapper classN="flex flex-col justify-between pb-5">
+						<Navbar />
+						{children}
+						<Footer />
+					</MaxWidthRapper>
+				</DarkThemeProvider>
 			</body>
 		</html>
 	);
