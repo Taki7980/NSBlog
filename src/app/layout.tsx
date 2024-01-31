@@ -28,7 +28,7 @@ export default function RootLayout({
 					disableTransitionOnChange
 				>
 					
-					<MaxWidthRapper classN="flex flex-col justify-between pb-5">
+					<MaxWidthRapper classN="flex flex-col pb-5">
 						<Navbar />
 						{children}
 						<Footer />
