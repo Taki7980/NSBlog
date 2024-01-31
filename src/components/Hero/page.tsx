@@ -26,14 +26,16 @@ const Hero: React.FC<Props> = ({
 			{reverce ? (
 				<>
 					<div className="h-full w-full md:w-1/2 ">
+						
 						<Heading
 							title={heading}
 							center={headCenter}
 							subtitle={subtitle}
 							para={paragraph}
+							classN="justify-evenly"
 						/>
 					</div>
-					<div className="h-full w-full md:w-1/2 relative">
+					<div className="h-full w-full md:w-1/2 relative hidden md:flex">
 						<Image
 							src={image}
 							alt="image"
@@ -44,7 +46,7 @@ const Hero: React.FC<Props> = ({
 				</>
 			) : (
 				<>
-					<div className="h-full  w-full md:w-1/2 relative">
+					<div className="h-full w-full md:w-1/2 relative hidden md:flex">
 						<Image
 							src={image}
 							alt="image"
@@ -58,6 +60,7 @@ const Hero: React.FC<Props> = ({
 							center={headCenter}
 							subtitle={subtitle}
 							para={paragraph}
+							classN="justify-evenly"
 						/>
 					</div>
 				</>
