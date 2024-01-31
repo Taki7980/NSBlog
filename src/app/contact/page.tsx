@@ -1,20 +1,21 @@
-import Hero from '@/components/Hero/page'
-import React from 'react'
+import Heading from "@/components/reuseable/Heading";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import ContactForm from "../../components/contactForm/ContactForm";
 
 const page = () => {
-  return (
-    <div>
-      <Hero
-					image="/contact.png"
-					heading="champion"
-					
-					reverce
-					subtitle="messi the goat"
-					paragraph={`Messi relocated to Spain from Argentina aged 13 to join Barcelona, for whom he made his competitive debut aged 17 in October 2004. He established himself as an integral player for the club within the next three years, and in his first uninterrupted season in 2008–09 he helped Barcelona achieve the first treble in Spanish football; that year, aged 22, Messi won his first Ballon d'Or. Three successful seasons followed, with Messi winning four consecutive Ballons d'Or, making him the first player to win the award four times. During the 2011–12 season, `}
+	return (
+		<div className="flex items-center justify-center h-full w-full my-10">
+			<div className="innerBox w-full h-full flex flex-col items-center justify-around gap-6">
+				<div className="head">
+					<Heading title="Contact Us" center />
+				</div>
+				<ContactForm/>				
+			</div>
+		</div>
+	);
+};
 
-				/>
-    </div>
-  )
-}
-
-export default page
+export default page;
